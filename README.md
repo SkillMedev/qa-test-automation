@@ -1,8 +1,8 @@
 # QA & Test Automation
 
-**Build a test suite that actually catches bugs — and stops flaking.** — built in-house by [Skill&nbsp;Me](https://skillme.dev).
+**For engineers who don't trust their test suite: catch real bugs and kill the flake.** — built in-house by [Skill&nbsp;Me](https://skillme.dev).
 
-Beyond unit tests and TDD: detangle flaky tests at the root, find risk-weighted coverage gaps, build clean fixtures and factories, write consumer-driven contract tests, author maintainable Playwright/Cypress E2E, design mocks without over-mocking, and use mutation testing to expose assertions that verify nothing.
+Reach for this when your suite is green but you don't believe it — high coverage that misses the bug, tests that flake in CI, mocks that pass while production breaks. It takes a suite from "runs" to "trustworthy": prove which gaps actually matter, root-cause flakiness instead of retrying around it, and use mutation testing to expose assertions that verify nothing. Pull it in before a release cut or when a passing build still ships regressions.
 
 ⭐ **If this is useful, star the repo** — it's how we gauge what to build next.
 
@@ -14,13 +14,13 @@ Beyond unit tests and TDD: detangle flaky tests at the root, find risk-weighted 
 
 ## Skills in this pack
 
-- **[Flaky Test Detangler](skills/flaky-test-detangler/SKILL.md)** — Diagnoses the root cause of intermittently failing tests and fixes them at the source instead of retrying.
-- **[Coverage Gap Finder](skills/coverage-gap-finder/SKILL.md)** — Identifies untested critical paths and branches and prioritizes them by risk rather than chasing a line-coverage percentage.
-- **[Test Data Builder](skills/test-data-builder/SKILL.md)** — Generates realistic fixtures, factories, and edge-case datasets using the builder pattern while avoiding shared mutable fixtures.
-- **[Contract Test Writer](skills/contract-test-writer/SKILL.md)** — Writes consumer-driven contract tests for service and API boundaries so integrations break loudly at build time instead of silently in production.
-- **[E2E Scenario Author](skills/e2e-scenario-author/SKILL.md)** — Converts an acceptance criterion into a maintainable Playwright or Cypress end-to-end test using role-based selectors and the page-object or fixture pattern.
-- **[Mock Stub Designer](skills/mock-stub-designer/SKILL.md)** — Sets up the right mocks, stubs, and fakes for external dependencies without over-mocking, and decides what to fake versus use for real.
-- **[Mutation Test Runner](skills/mutation-test-runner/SKILL.md)** — Uses mutation testing to expose tests that execute code but assert nothing, and interprets surviving mutants into concrete missing assertions.
+- **[Flaky Test Detangler](skills/flaky-test-detangler/SKILL.md)** — Root-causes intermittently failing tests and eliminates the hidden dependency at its source instead of retrying around it.
+- **[Coverage Gap Finder](skills/coverage-gap-finder/SKILL.md)** — Produces a risk-ranked list of untested critical paths and branches, with the specific missing cases and the smallest test that buys the most safety.
+- **[Test Data Builder](skills/test-data-builder/SKILL.md)** — Builds realistic domain fixtures, factories, and edge-case datasets with the builder pattern and valid defaults.
+- **[Contract Test Writer](skills/contract-test-writer/SKILL.md)** — Write consumer-driven contract tests at service and API boundaries so an incompatible change fails a build instead of breaking integrations silently in production.
+- **[E2E Scenario Author](skills/e2e-scenario-author/SKILL.md)** — Converts an acceptance criterion or user story into one maintainable Playwright or Cypress end-to-end test that reads like the journey it covers.
+- **[Mock Stub Designer](skills/mock-stub-designer/SKILL.md)** — Designs the minimal set of test doubles for a unit or integration test and decides, per dependency, what to fake versus exercise for real.
+- **[Mutation Test Runner](skills/mutation-test-runner/SKILL.md)** — Runs mutation testing on already-covered code and turns each surviving mutant into a specific missing assertion, exposing tests that execute code but verify nothing.
 - **[Playwright Testing](skills/playwright-testing/SKILL.md)** — Reliable end-to-end browser tests with resilient selectors and no flaky waits.
 - **[TDD Expert](skills/tdd-expert/SKILL.md)** — Enforces Red-Green-Refactor discipline: write the failing test first, then the minimum code to pass it.
 
