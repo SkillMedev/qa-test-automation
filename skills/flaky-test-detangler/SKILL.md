@@ -17,6 +17,31 @@ A flaky test is not random — it is a hidden dependency on something you did no
 7. **Quarantine only what you cannot yet fix.** Tag a confirmed-flaky test as skipped-but-still-running (non-blocking) with a linked ticket, an owner, and a deadline, so you keep collecting failure data. Quarantine is a holding cell, not a verdict.
 8. **Stop at the root cause.** Close the case when you can name the dependency and the captured seed passes deterministically. If 500x of looping yields no repro and the test guards critical behavior, ship structured logging and the failing seed to CI artifacts instead of deleting it. Delete a test only when it asserts nothing meaningful or duplicates coverage.
 
+## Worked example
+
+The most common flake, and its fix:
+
+Bad — passes whenever the save completes within 2 seconds, fails on a loaded CI runner:
+
+```js
+fireEvent.click(saveButton);
+await new Promise((r) => setTimeout(r, 2000)); // "give it time to save"
+expect(screen.getByText('Saved')).toBeInTheDocument();
+```
+
+Good — waits on the observable condition, fails only when saving is actually broken:
+
+```js
+fireEvent.click(saveButton);
+await waitFor(() => expect(screen.getByText('Saved')).toBeInTheDocument());
+```
+
+The bad version encodes a hidden timing dependency ("the save always finishes in under 2s on my machine"). The good version removes the dependency instead of padding it — no sleep survives, and the test's pass/fail now tracks the behavior it names.
+
+## Deliverable
+
+Produce a fix PR plus a short root-cause note that names the hidden dependency in one sentence (order / timing / shared state / clock / network), records the captured failing seed and order, and shows the rerun evidence (e.g. 100/100 passes on the previously failing seed). If the test is quarantined instead of fixed, the note carries the ticket link, owner, and deadline.
+
 ## Quality bar
 
 - You can name the controlled dependency in one sentence (order / timing / shared state / clock / network).
