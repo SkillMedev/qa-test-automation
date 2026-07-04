@@ -9,7 +9,7 @@ Reach for this when your suite is green but you don't believe it — high covera
 ## Install
 
 - **From the catalog:** [skillme.dev/pack/qa-test-automation](https://skillme.dev/pack/qa-test-automation) — install the whole pack into Claude in one step.
-- **With the skills CLI:** `npx skills add aouellets/qa-test-automation`
+- **With the skills CLI:** `npx skills add SkillMedev/qa-test-automation`
 - **Manually:** copy any `skills/<slug>/SKILL.md` into your Claude skills directory.
 
 ## Skills in this pack
