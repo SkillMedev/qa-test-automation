@@ -1,16 +1,17 @@
 # QA & Test Automation
 
-**For engineers who don't trust their test suite: catch real bugs and kill the flake.** — built in-house by [Skill&nbsp;Me](https://skillme.dev).
+**For engineers who don't trust their test suite: catch real bugs and kill the flake.** — built in-house by [Skill&nbsp;Me](https://skillme.dev/?utm_source=github&utm_medium=readme&utm_campaign=pack-qa-test-automation).
 
 Reach for this when your suite is green but you don't believe it - high coverage that misses the bug, tests that flake in CI, mocks that pass while production breaks. It takes a suite from "runs" to "trustworthy": prove which gaps actually matter, root-cause flakiness instead of retrying around it, and use mutation testing to expose assertions that verify nothing. Pull it in before a release cut or when a passing build still ships regressions.
 
-⭐ **If this is useful, star the repo** — it's how we gauge what to build next.
-
 ## Install
 
-- **From the catalog:** [skillme.dev/pack/qa-test-automation](https://skillme.dev/pack/qa-test-automation) — install the whole pack into Claude in one step.
+- **Claude, ChatGPT, Codex, Cursor (connector):** [install the whole pack from skillme.dev](https://skillme.dev/pack/qa-test-automation?utm_source=github&utm_medium=readme&utm_campaign=pack-qa-test-automation) — one connection, then ask for any skill by name.
+- **As files for Codex, Cursor, or Claude Code:** `npx @skillme/cli add flaky-test-detangler coverage-gap-finder test-data-builder contract-test-writer e2e-scenario-author mock-stub-designer mutation-test-runner playwright-testing tdd-expert --target all`
 - **With the skills CLI:** `npx skills add SkillMedev/qa-test-automation`
-- **Manually:** copy any `skills/<slug>/SKILL.md` into your Claude skills directory.
+- **Manually:** copy any `skills/<slug>/SKILL.md` into `.agents/skills/`, `.cursor/skills/`, or `.claude/skills/`.
+
+⭐ **If this is useful, star the repo** — it's how we gauge what to build next.
 
 ## Skills in this pack
 
@@ -27,4 +28,4 @@ Reach for this when your suite is green but you don't believe it - high coverage
 ## License
 
 MIT — see [LICENSE](LICENSE). Skills are portable `SKILL.md` files; the canonical
-copies live in the [Skill&nbsp;Me catalog](https://skillme.dev).
+copies live in the [Skill&nbsp;Me catalog](https://skillme.dev/browse?utm_source=github&utm_medium=readme&utm_campaign=pack-qa-test-automation).
